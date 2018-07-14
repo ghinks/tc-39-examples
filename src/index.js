@@ -1,10 +1,12 @@
 import { promises as fs } from 'fs'
-console.log('hello')
 
-const readFileContents = async () => {
-  const file = await fs.readFile('package.json', 'utf8')
-  console.log(file)
-}
+(async () => {
+  const text = await fs.readFile('package.json', 'utf8')
+  const pack = JSON.parse(text)
+  console.log(pack.version)
+})()
 
-readFileContents()
 
+
+const bigNum = 1_000_000
+console.log(bigNum)
