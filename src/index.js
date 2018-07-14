@@ -1,12 +1,16 @@
 import { promises as fs } from 'fs'
 
-(async () => {
+const readFile = async () => {
   const text = await fs.readFile('package.json', 'utf8')
-  const pack = JSON.parse(text)
-  console.log(pack.version)
-})()
+  const pkJson = JSON.parse(text)
+  console.log(pkJson.version)
+  return pkJson
+}
 
+readFile()
 
+export default readFile
 
 const bigNum = 1_000_000
+
 console.log(bigNum)
