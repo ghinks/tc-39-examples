@@ -9,11 +9,4 @@ const readFile = async () => {
 
 readFile()
 
-const bigNum = 1_000_000
-
-console.log(bigNum)
-
-const inc = (x) => x + 1
-
-export { inc, readFile as default }
-
+export default readFile

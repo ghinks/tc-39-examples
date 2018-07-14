@@ -5,8 +5,4 @@ describe('example tests', () => {
     const result = await readFile()
     expect(result.version).toBe('1.0.0')
   })
-
-  test('expect to increment', () => {
-    expect(10 |> inc).toBe(11)
-  })
 })

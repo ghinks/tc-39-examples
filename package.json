@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "npx babel src --out-dir dist",
+    "build": "rm -rf dist && npx babel src --out-dir dist --ignore src/**/test.js",
     "test": "jest src"
   },
   "keywords": [],
@@ -50,6 +50,9 @@
           "proposal": "minimal"
         }
       ]
+    ],
+    "ignore": [
+      "test.js"
     ]
   },
   "standard": {
@@ -58,5 +61,10 @@
       "node": true,
       "jest": true
     }
+  },
+  "jest": {
+    "collectCoverage": true,
+    "coverageDirectory": "coverage",
+    "collectCoverageFrom": ["src/**/index.js"]
   }
 }
